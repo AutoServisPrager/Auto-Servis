@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Servis</title>
+</head>
+<body>
+    <h1>Seznam vozidel</h1>
+    <table border="1">
+        <tr>
+            <th>SPZ</th>
+            <th>Značka</th>
+            <th>Model</th>
+            <th>STK do</th>
+        </tr>
+        {% for vehicle in vehicles %}
+        <tr>
+            <td>{{ vehicle.license_plate }}</td>
+            <td>{{ vehicle.brand }}</td>
+            <td>{{ vehicle.model }}</td>
+            <td>{{ vehicle.next_stk_date.strftime('%d.%m.%Y') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
