@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoservis</title>
+</head>
+<body>
+    <h1>Seznam vozidel</h1>
+    <ul>
+        {% for vehicle in vehicles %}
+            <li>{{ vehicle.license_plate }} - {{ vehicle.brand }} {{ vehicle.model }} (STK do {{ vehicle.next_stk_date.strftime('%Y-%m-%d') }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
