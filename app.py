@@ -74,8 +74,10 @@ def add_vehicle():
     return redirect(url_for('index'))
 
 # Spuštění aplikace
+with app.app_context():
+    db.create_all()
+    print("✅ Databáze byla úspěšně vytvořena!")
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()  # Vytvoření databáze, pokud neexistuje
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
 
